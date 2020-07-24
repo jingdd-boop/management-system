@@ -3,8 +3,14 @@ const app = new Koa()
 const Router = require('koa-router')
 const router = new Router()
 const cors = require('koa2-cors')
+const koaBody = require('koa-body')
 
 const ENV =  'jingdada-yunid'
+//接收post参数解析
+app.use(koaBody({
+  multipart: true,
+}))
+
 
 //跨域
 app.use(cors({
