@@ -26,12 +26,13 @@ app.use(async (ctx,next) => {
 })
 
 const playlist = require('./controller/playlist.js')
+const swiper = require('./controller/swiper.js')
+
 router.use('/playlist',playlist.routes())
+router.use('/swiper',swiper.routes())
 
 app.use(router.routes())
 app.use(router.allowedMethods())
-
-
 
 
 app.listen(3000, () => {
